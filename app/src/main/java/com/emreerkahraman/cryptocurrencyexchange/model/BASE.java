@@ -1,10 +1,10 @@
 
-package com.emreerkahraman.cryptocurrencyexchange.gson;
+package com.emreerkahraman.cryptocurrencyexchange.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class USD {
+public class BASE {
 
     @SerializedName("price")
     @Expose

@@ -1,9 +1,8 @@
-package com.emreerkahraman.cryptocurrencyexchange;
+package com.emreerkahraman.cryptocurrencyexchange.api;
 
-import com.emreerkahraman.cryptocurrencyexchange.gson.Currency;
+import com.emreerkahraman.cryptocurrencyexchange.model.Currency;
 
 
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

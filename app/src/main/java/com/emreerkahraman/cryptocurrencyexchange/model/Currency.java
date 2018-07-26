@@ -1,5 +1,5 @@
 
-package com.emreerkahraman.cryptocurrencyexchange.gson;
+package com.emreerkahraman.cryptocurrencyexchange.model;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;

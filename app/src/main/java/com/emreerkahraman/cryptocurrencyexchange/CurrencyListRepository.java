@@ -5,7 +5,9 @@ import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
 
 
-import com.emreerkahraman.cryptocurrencyexchange.gson.Currency;
+import com.emreerkahraman.cryptocurrencyexchange.api.ApiDataService;
+import com.emreerkahraman.cryptocurrencyexchange.api.CoinMarketApiService;
+import com.emreerkahraman.cryptocurrencyexchange.model.Currency;
 
 import retrofit2.Call;
 import retrofit2.Callback;

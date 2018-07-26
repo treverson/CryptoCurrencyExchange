@@ -1,4 +1,4 @@
-package com.emreerkahraman.cryptocurrencyexchange;
+package com.emreerkahraman.cryptocurrencyexchange.api;
 
 import java.util.concurrent.Executors;
 

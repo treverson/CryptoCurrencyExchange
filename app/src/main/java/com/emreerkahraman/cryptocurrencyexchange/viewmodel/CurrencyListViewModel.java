@@ -1,15 +1,11 @@
-package com.emreerkahraman.cryptocurrencyexchange;
+package com.emreerkahraman.cryptocurrencyexchange.viewmodel;
 
-import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-import android.support.annotation.NonNull;
 
-import com.emreerkahraman.cryptocurrencyexchange.gson.Currency;
-
-import java.util.List;
+import com.emreerkahraman.cryptocurrencyexchange.CurrencyListRepository;
+import com.emreerkahraman.cryptocurrencyexchange.model.Currency;
 
 public class CurrencyListViewModel extends ViewModel {
 

@@ -10,9 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.emreerkahraman.cryptocurrencyexchange.gson.Data;
+import com.emreerkahraman.cryptocurrencyexchange.model.Data;
 
-import java.util.Date;
 import java.util.List;
 
 public class CurrencyListAdapter extends RecyclerView.Adapter<CurrencyListAdapter.CurrencyListViewHolder>{
