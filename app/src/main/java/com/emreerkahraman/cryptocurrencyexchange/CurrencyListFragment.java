@@ -17,9 +17,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.emreerkahraman.cryptocurrencyexchange.gson.Currency;
+import com.emreerkahraman.cryptocurrencyexchange.gson.Data;
 
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class CurrencyListFragment extends Fragment  implements LifecycleOwner{
@@ -47,6 +49,9 @@ public class CurrencyListFragment extends Fragment  implements LifecycleOwner{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_currency_list,container,false);
         recyclerView=view.findViewById(R.id.recyclerview);
+        recyclerView.setHasFixedSize(true);
+
+
 
         recyclerView.setAdapter(currencyListAdapter);
 
@@ -60,14 +65,10 @@ public class CurrencyListFragment extends Fragment  implements LifecycleOwner{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        currencyListAdapter=new CurrencyListAdapter();
 
         mViewModel = ViewModelProviders.of(this).get(CurrencyListViewModel.class);
-        mViewModel.getCurrencyGsonLiveData().observe(this, new Observer<Currency>() {
-            @Override
-            public void onChanged(@Nullable Currency currency) {
-                currencyListAdapter.setmCurrencyList(currency.getData());
-            }
-        });
+        currencyListAdapter.setmCurrencyList(mViewModel.getCurrencyGsonLiveData().getValue().getData());
 
 
     }
