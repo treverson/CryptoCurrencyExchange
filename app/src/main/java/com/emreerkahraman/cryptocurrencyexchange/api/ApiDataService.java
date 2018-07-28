@@ -14,9 +14,7 @@ public class ApiDataService {
     public Retrofit getRetrofit() {
         retrofit= new retrofit2.Retrofit.Builder().
                 baseUrl(BASE_URL).
-                addConverterFactory(GsonConverterFactory.create())
-                .callbackExecutor(Executors.newSingleThreadExecutor())
-                .build();
+                addConverterFactory(GsonConverterFactory.create()).build();
         return retrofit;
     }
 }

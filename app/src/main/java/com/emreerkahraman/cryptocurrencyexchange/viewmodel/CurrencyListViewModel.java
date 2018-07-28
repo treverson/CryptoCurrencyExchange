@@ -9,15 +9,21 @@ import com.emreerkahraman.cryptocurrencyexchange.model.Currency;
 
 public class CurrencyListViewModel extends ViewModel {
 
-    private  LiveData<Currency> currencyLiveData=new MutableLiveData<>();
-    private CurrencyListRepository currencyListRepository=new CurrencyListRepository();
+    private CurrencyListRepository currencyListRepository;
+    private LiveData<Currency> mCurrencyLiveData;
 
 
-
-    public LiveData<Currency> getCurrencyGsonLiveData() {
-        if (currencyLiveData==null){
-            currencyLiveData=currencyListRepository.getCurrencyList("TRY",6,"id","array");
-        }
-        return currencyLiveData;
+    public LiveData<Currency> getmCurrencyLiveData() {
+        return mCurrencyLiveData;
     }
+
+
+
+    public CurrencyListViewModel(){
+        currencyListRepository=new CurrencyListRepository();
+        mCurrencyLiveData=currencyListRepository.getCurrencyLiveData();
+    }
+
+
+
 }
