@@ -8,7 +8,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="76dp">
+        android:layout_height="85dp">
 
         <ImageView
             android:id="@+id/currencyIconImageView"
@@ -16,6 +16,7 @@
             android:layout_height="50dp"
             android:layout_marginEnd="109dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toStartOf="@+id/symbolTextview"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,12 +25,14 @@
 
         <TextView
             android:id="@+id/symbolTextview"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:textColor="@android:color/black"
             android:text="TextView3"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,17 +45,21 @@
             android:layout_height="wrap_content"
             android:text="TextView2"
             android:textAlignment="viewStart"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/currencyIconImageView"
             app:layout_constraintTop_toBottomOf="@+id/currencyIconImageView" />
 
         <TextView
             android:id="@+id/priceTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
             android:text="TextView4"
-            android:textAlignment="viewStart"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/symbolTextview"
             app:layout_constraintTop_toBottomOf="@+id/symbolTextview"
@@ -74,6 +81,8 @@
                 android:id="@+id/percentchange1hrText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
 
                 android:text="textView7" />
 
@@ -81,12 +90,16 @@
                 android:id="@+id/percentchange1dText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
                 android:text="TextView5" />
 
             <TextView
                 android:id="@+id/percentchange1wText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
                 android:text="TextView6" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.emreerkahraman.cryptocurrencyexchange;
 
+import android.app.Application;
 import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Color;
@@ -18,16 +19,20 @@ import com.bumptech.glide.RequestManager;
 import com.emreerkahraman.cryptocurrencyexchange.model.Currency;
 import com.emreerkahraman.cryptocurrencyexchange.model.Data;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class CurrencyListAdapter extends RecyclerView.Adapter<CurrencyListAdapter.CurrencyListViewHolder>{
 
-    private RequestManager glide;
+
     private Context context;
     private List<Data> mCurrencyList;
 
+
+
     public CurrencyListAdapter(Currency currency){
         mCurrencyList=currency.getData();
+
     }
 
 
@@ -65,10 +70,13 @@ public class CurrencyListAdapter extends RecyclerView.Adapter<CurrencyListAdapte
     public void onBindViewHolder(@NonNull CurrencyListAdapter.CurrencyListViewHolder holder, int position) {
         Data currency=mCurrencyList.get(position);
 
-        holder.nameTextView.setText(currency.getName());
-        holder.priceTextView.setText(String.valueOf(currency.getQuotes().getBASE().getPrice()));
-        holder.symbolTextView.setText(currency.getSymbol());
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
 
+
+        holder.nameTextView.setText(currency.getName());
+        holder.priceTextView.setText(String.valueOf(df.format(currency.getQuotes().getBASE().getPrice())));
+        holder.symbolTextView.setText(currency.getSymbol());
         holder.changepercent1hrTextView.setText(String.valueOf(currency.getQuotes().getBASE().getPercentChange1h()));
         holder.changepercent1hrTextView.setTextColor(getColor(currency.getQuotes().getBASE().getPercentChange1h()));
         holder.changepercent1dTextView.setText(String.valueOf(currency.getQuotes().getBASE().getPercentChange24h()));
@@ -77,9 +85,8 @@ public class CurrencyListAdapter extends RecyclerView.Adapter<CurrencyListAdapte
         holder.changepercent1wTextView.setTextColor(getColor(currency.getQuotes().getBASE().getPercentChange7d()));
 
 
-       // int id = context.getResources().getIdentifier("drawable/icon"+currency.getSymbol().toLowerCase(), null, context.getPackageName());
-       // holder.currencyIconImageView.setImageResource(id);
-       // Glide.with().load("https://github.com/crypti/cryptocurrencies/blob/master/images/"+currency.getSymbol()+".png").into(holder.currencyIconImageView);
+
+       //Glide.with(context.getApplicationContext()).load("https://github.com/emreerkahraman/CryptoCurrencyExchange/blob/master/icon/"+currency.getSymbol()+".webp").into(holder.currencyIconImageView).waitForLayout();
 
     }
 
