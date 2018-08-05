@@ -5,8 +5,8 @@
     android:id="@+id/currencymame"
     android:title="TRY"
     app:showAsAction="always">
+    </item>
 
 
-</item>
 
     </menu>

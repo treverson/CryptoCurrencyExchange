@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.emreerkahraman.cryptocurrencyexchange.model.Data"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -29,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:text="TextView3"
+            android:text="@{data.symbol}"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18sp"
@@ -43,7 +52,7 @@
             android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView2"
+            android:text="@{data.name}"
             android:textAlignment="viewStart"
             android:textColor="@android:color/black"
             android:textSize="18sp"
@@ -56,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:text="TextView4"
+            android:text="@{data.quotes.BASE.price.toString()}"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18sp"
@@ -83,8 +92,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textEnd"
                 android:textSize="18sp"
-
-                android:text="textView7" />
+                android:text="@{String.valueOf(data.quotes.BASE.percentChange1h)}" />
 
             <TextView
                 android:id="@+id/percentchange1dText"
@@ -92,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textEnd"
                 android:textSize="18sp"
-                android:text="TextView5" />
+                android:text="@{String.valueOf(data.quotes.BASE.percentChange24h)}" />
 
             <TextView
                 android:id="@+id/percentchange1wText"
@@ -100,8 +108,9 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="textEnd"
                 android:textSize="18sp"
-                android:text="TextView6" />
+                android:text="@{String.valueOf(data.quotes.BASE.percentChange7d)}" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 
 </android.support.v7.widget.CardView>
+</layout>
