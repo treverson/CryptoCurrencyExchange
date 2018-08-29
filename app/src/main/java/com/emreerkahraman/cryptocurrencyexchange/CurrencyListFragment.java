@@ -88,6 +88,7 @@ public class CurrencyListFragment extends Fragment  implements LifecycleOwner{
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.clear();
         inflater.inflate(R.menu.toolbar,menu);
         super.onCreateOptionsMenu(menu, inflater);
     }

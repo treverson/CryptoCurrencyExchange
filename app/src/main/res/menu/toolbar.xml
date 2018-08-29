@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
     android:id="@+id/currencymame"
-    android:title="TRY"
-    app:showAsAction="always">
+    android:title="@string/trl"
+    app:showAsAction="ifRoom">
     </item>
 
 

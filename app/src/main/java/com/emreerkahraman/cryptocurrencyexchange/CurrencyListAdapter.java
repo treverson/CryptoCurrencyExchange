@@ -3,6 +3,7 @@ package com.emreerkahraman.cryptocurrencyexchange;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,11 +15,14 @@ import android.widget.TextView;
 import com.emreerkahraman.cryptocurrencyexchange.databinding.RecyclerviewItemBinding;
 import com.emreerkahraman.cryptocurrencyexchange.model.Currency;
 import com.emreerkahraman.cryptocurrencyexchange.model.Data;
+import com.squareup.picasso.Picasso;
 
 
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Random;
+
+import retrofit2.http.Url;
 
 public class CurrencyListAdapter extends RecyclerView.Adapter<CurrencyListAdapter.CurrencyListViewHolder> {
 
@@ -75,6 +79,10 @@ public class CurrencyListAdapter extends RecyclerView.Adapter<CurrencyListAdapte
         holder.binding.percentchange1hrText.setTextColor(getColor(currency.getQuotes().getBASE().getPercentChange1h()));
         holder.binding.percentchange1dText.setTextColor(getColor(currency.getQuotes().getBASE().getPercentChange24h()));
         holder.binding.percentchange1wText.setTextColor(getColor(currency.getQuotes().getBASE().getPercentChange7d()));
+        String url="https://s2.coinmarketcap.com/static/img/coins/64x64/"+currency.getId()+".png";
+        Picasso.get().load(url).into(holder.binding.currencyIconImageView);
+
+
 
 
 
@@ -90,11 +98,11 @@ public class CurrencyListAdapter extends RecyclerView.Adapter<CurrencyListAdapte
     }
     private int getColor(Double d){
         if (d==null){
-            return Color.parseColor("#F44336");
+            return Color.parseColor("#DD2C00");
         }
         else{
             if (d>0){
-                return Color.parseColor("#4CAF50");
+                return Color.parseColor("#00C853");
             }
         }
         return Color.RED;
