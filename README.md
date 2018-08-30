@@ -1,7 +1,7 @@
 # CryptoCurrency Exchange
 **It's a CryptoCurrency Exchange app using Viewmodel + Livedata + Retrofit + DataBinding**
 
-**It's a revised version my old CryptoCurrency app using Android Architecture Components**
+**It's a revised version my old CryptoCurrency (don't look at :)) app using Android Architecture Components**
 
 **And I  wrote a blog about it**
 
