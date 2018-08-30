@@ -5,6 +5,6 @@ https://medium.com/@emreerkahraman/android-architecture-components-with-retrofit
 
 # Screenshot 1
 <img src="Screenshot/ss1.png" width="200">
-//
-# Screenshot 2
+
+## Screenshot 2
 <img src="Screenshot/ss2.png" width="200">
